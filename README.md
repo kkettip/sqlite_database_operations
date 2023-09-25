@@ -14,7 +14,7 @@ For the New York Presbyterian (NYP) Hospital dataset, the minimum negotiated cha
 
 **Import required libraries.**
 
-import pandas as pd n/
+import pandas as pd 
 from sqlalchemy import create_engine
 import sqlite3
 
