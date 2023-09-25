@@ -1,15 +1,16 @@
 # sqlite_database_operations
 
-#####**Dataset Information**
+**Dataset Information**
+
 New York Presbyterian (NYP) Hospital charges dataset has 6193 rows and 47 columns. The columns are 'Code (CPT/DRG)', 'Description', 'Rev Code', 'Inpatient/Outpatient', 'Gross Charges', 'Discounted Cash Price', 'Aetna', 'Cigna', 'Empire Blue Cross Blue Shield', 'Emblem Health', 'United Health Group', 'Aetna Medicare', 'AgeWell Medicare', 'Emblem Medicare', 'Empire Medicare', 'Fidelis Medicare', 'Healthfirst Medicare', 'UHC Community Plan/United Medicare', 'VNS Medicare', 'WellCare Medicare', '1199', 'Affinity Molina Essential', 'Affinity Molina Medicaid/CHP', 'Amida Care Medicaid', 'Emblem Medicaid/CHP', 'Empire Healthplus Essential', 'Empire Healthplus Exchange', 'Empire Healthplus Medicaid/CHP', 'Fidelis Essential/Exchange', 'Fidelis Medicaid/CHP', 'Healthfirst Essential/Exchange', 'Healthfirst Medicaid/CHP', 'MVP Medicaid/CHP', 'MVP Essential', 'United Community Plan Essential', 'United Community Plan Medicaid', 'VNS Medicaid', 'Consumer Health Network', 'Devon', 'Equian', 'First Health', 'Magnacare', 'Multiplan/Beechstreet/PHCS', 'QHM', 'Worldwide', 'Minimum Negotiated Charge', and 'Maximum Negotiated Charge'. After data cleaning and dropping rows with NaN 5912 rows remain. To analyze the data mean, median, mode, standard deviation, range, variance, and Interquartile range of the values for columns 'Gross Charges', 'Discounted Cash Price', 'Minimum Negotiated Charge', and 'Maximum Negotiated Charge' were evaluated. A histogram of the distribution was also generated and counts for columns such as 'Inpatient/Outpatient' and Description were examined.
 
 Maimonides Medical Center's (MMC) dataset provides standard hospital charges as of December 2021. The dataset has 107972 rows and 3 columns. The columns are 'CDM', 'CDM_Description', 'ChargeAmount'. Data cleaning was not performed because there were no missing data or duplicated rows. To analyze the data mean, median, mode, standard deviation, range, variance, and Interquartile range of the values for column ChargeAmount were evaluated. A histogram of the distribution was also generated. Counts for columns CDM_Description and CDM were also examined.
 
 For the New York Presbyterian (NYP) Hospital dataset, the minimum negotiated charge, maximum negotiated charge, gross charges, and discounted cash price with the highest frequency is between 0 to 500. For Maimonides Medical Center datasets, the charge amount with the highest frequency is also between 0 to 500.
 
-##**Instructions and python codes to replicate SQLite database setup.**
+**Instructions and python codes to replicate SQLite database setup.**
 
-####**For creating a table manually.**
+**For creating a table manually.**
 
 **Import required libraries.**
 
@@ -57,8 +58,8 @@ c.execute('''
 c.fetchall()
 
 
-#for value in c.fetchall():
-#    print(value)
+for value in c.fetchall():
+    print(value)
 
 
 c.execute('''
@@ -172,7 +173,7 @@ c.execute(sql_query_2)
 print(c.fetchall())
 
 
-###**Instructions for Automatic table creation**
+**Instructions for Automatic table creation**
 
 
 **Create and connect to the database.**
@@ -182,7 +183,7 @@ engine = create_engine('sqlite:///health.db')
 pd.read_sql_query("select * from treatment_costs;", conn)
 
 
-#**Adding Maimonides Medical Center dataset for charges into database**
+**Adding Maimonides Medical Center dataset for charges into database**
 
 
 **Loading dataset**
